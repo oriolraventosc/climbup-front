@@ -26,7 +26,8 @@ const ClimbingWall = (climbingWall: ClimbingWallProps): JSX.Element => {
       <Container
         disableGutters
         maxWidth={false}
-        sx={{ height: "300px", width: "100%" }}
+        sx={{ width: "100%" }}
+        className="climbingwall-picture-container"
       >
         <img
           height="100%"

@@ -8,10 +8,16 @@ const ClimbingWallStyled = styled(Container)`
     width: 350px;
   }
   @media (min-width: 1024px) {
-    width: 343px;
+    width: 340px;
   }
   .climbingwall {
     &__image {
+    }
+    &-picture-container {
+      height: 350px;
+      @media (min-width: 1024px) {
+        height: 340px;
+      }
     }
   }
 `;
