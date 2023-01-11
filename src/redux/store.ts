@@ -1,7 +1,10 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import { ClimbingWallReducer } from "./features/climbingWallSlicer/climbingWallSlice";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    climbingWallsReducer: ClimbingWallReducer,
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;
