@@ -9,7 +9,7 @@ const LoadingContainerStyled = styled.div`
   width: 100vw;
   position: fixed;
   left: 0;
-  z-index: 9;
+  z-index: 10;
   body {
     padding: 0;
   }
