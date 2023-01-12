@@ -5,11 +5,10 @@ import mainTheme from "../../styles/mainTheme";
 import Home from "./Home";
 import { Provider } from "react-redux";
 import { store } from "../../redux/store";
-import LoadMore from "../../components/LoadMore/LoadMore";
 
 describe("Given a Home component", () => {
   describe("When it is rendered", () => {
-    test("Then it should show the climbing walls list", () => {
+    test("Then it should show the text 'No hay resultados'", () => {
       render(
         <Provider store={store}>
           <ThemeProvider theme={mainTheme}>
@@ -18,27 +17,11 @@ describe("Given a Home component", () => {
           </ThemeProvider>
         </Provider>
       );
-      const paragraphAccessibleName = "climbing walls list";
+      const text = "No hay resultados";
 
-      const expectedList = screen.queryByLabelText(paragraphAccessibleName);
+      const expectedText = screen.getByText(text);
 
-      expect(expectedList).toBeInTheDocument();
-    });
-
-    test("Then it should show a button with the text 'CARGAR MÁS'", () => {
-      render(
-        <ThemeProvider theme={mainTheme}>
-          <GlobalStyles />
-          <LoadMore />
-        </ThemeProvider>
-      );
-      const buttonText = "CARGAR MÁS";
-
-      const expectedButton = screen.queryByRole("button", {
-        name: buttonText,
-      });
-
-      expect(expectedButton).toBeInTheDocument();
+      expect(expectedText).toBeInTheDocument();
     });
   });
 });

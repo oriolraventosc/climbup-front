@@ -1,8 +1,11 @@
 import { TextField } from "@mui/material";
-import FormControl from "@mui/material/FormControl/FormControl";
-import InputLabel from "@mui/material/InputLabel/InputLabel";
-import MenuItem from "@mui/material/MenuItem/MenuItem";
-import Select, { SelectChangeEvent } from "@mui/material/Select/Select";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+} from "@mui/material";
 import { useState } from "react";
 import FilterContainerStyled from "./FilterContainerStyled";
 
