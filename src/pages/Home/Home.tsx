@@ -4,6 +4,7 @@ import HomeStyled from "./HomeStyled";
 import { useAppSelector } from "../../redux/hooks";
 import { useEffect } from "react";
 import useClimbingWall from "../../hooks/climbingWall/useClimbingWall";
+import LoadMore from "../../components/LoadMore/LoadMore";
 
 const Home = (): JSX.Element => {
   const { loadAllClimbingWalls } = useClimbingWall();
@@ -29,6 +30,7 @@ const Home = (): JSX.Element => {
           />
         ))}
       </HomeStyled>
+      <LoadMore />
     </>
   );
 };
