@@ -26,11 +26,11 @@ const Filter = (): JSX.Element => {
         variant="outlined"
         placeholder="Introduce una localización"
         className="search"
+        aria-label="search"
       />
       <FormControl className="filter">
         <InputLabel id="instalaciones">Instalaciones</InputLabel>
         <Select
-          labelId="instalaciones"
           id="instalaciones"
           value={installations}
           label="Instalaciones"
@@ -57,7 +57,6 @@ const Filter = (): JSX.Element => {
       <FormControl className="filter">
         <InputLabel id="actividades">Actividades</InputLabel>
         <Select
-          labelId="actividades"
           id="actividades"
           value={activities}
           label="Actividades"
