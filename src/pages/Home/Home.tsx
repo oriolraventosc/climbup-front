@@ -5,6 +5,7 @@ import { useAppSelector } from "../../redux/hooks";
 import { useEffect } from "react";
 import useClimbingWall from "../../hooks/climbingWall/useClimbingWall";
 import LoadMore from "../../components/LoadMore/LoadMore";
+import Filter from "../../components/Filter/Filter";
 
 const Home = (): JSX.Element => {
   const { loadAllClimbingWalls } = useClimbingWall();
@@ -18,7 +19,7 @@ const Home = (): JSX.Element => {
   return (
     <>
       <Header />
-
+      <Filter />
       <HomeStyled aria-label="climbing walls list">
         {climbingWalls.map((climbingWall, index) => (
           <ClimbingWall
