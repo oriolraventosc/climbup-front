@@ -1,6 +1,8 @@
 import { styled, Container } from "@mui/material";
 
 const HeaderStyled = styled(Container)`
+  z-index: 9;
+  position: relative;
   .header-desktop {
     display: none;
   }

@@ -16,3 +16,7 @@ export interface ClimbingWall {
   picture3: string;
   picture4: string;
 }
+
+export interface UiStructure {
+  loading: boolean;
+}
