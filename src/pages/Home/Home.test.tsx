@@ -23,5 +23,54 @@ describe("Given a Home component", () => {
 
       expect(expectedText).toBeInTheDocument();
     });
+
+    test("Then it should show a texfield", () => {
+      render(
+        <Provider store={store}>
+          <ThemeProvider theme={mainTheme}>
+            <GlobalStyles />
+            <Home />
+          </ThemeProvider>
+        </Provider>
+      );
+
+      const expectedTextField = screen.getByRole("textbox") as HTMLElement;
+
+      expect(expectedTextField).toBeInTheDocument();
+    });
+
+    test("Then it should show a 'Instalaciones' select", () => {
+      render(
+        <Provider store={store}>
+          <ThemeProvider theme={mainTheme}>
+            <GlobalStyles />
+            <Home />
+          </ThemeProvider>
+        </Provider>
+      );
+
+      const expecteSelect = screen.getByRole("button", {
+        name: "Instalaciones",
+      }) as HTMLElement;
+
+      expect(expecteSelect).toBeInTheDocument();
+    });
+
+    test("Then it should show a 'Actividades' select", () => {
+      render(
+        <Provider store={store}>
+          <ThemeProvider theme={mainTheme}>
+            <GlobalStyles />
+            <Home />
+          </ThemeProvider>
+        </Provider>
+      );
+
+      const expecteSelect = screen.getByRole("button", {
+        name: "Actividades",
+      }) as HTMLElement;
+
+      expect(expecteSelect).toBeInTheDocument();
+    });
   });
 });
