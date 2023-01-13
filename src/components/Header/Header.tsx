@@ -46,6 +46,8 @@ const Header = (): JSX.Element => {
                 xs: "3rem",
               },
             }}
+            aria-label="Volver al inicio"
+            aria-hidden="false"
             className={
               isScroll ? "header-mobile__icon-scroll" : "header-mobile__icon"
             }
@@ -108,6 +110,8 @@ const Header = (): JSX.Element => {
                 color: "primary.dark",
               },
             }}
+            aria-label="Volver al inicio"
+            aria-hidden="false"
           />
           <Container
             disableGutters

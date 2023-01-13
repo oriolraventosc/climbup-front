@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import { styled } from "@mui/material";
 
-const HomeStyled = styled.section`
+const HomeStyled = styled("section")`
   display: flex;
   flex-direction: column;
   align-items: center;

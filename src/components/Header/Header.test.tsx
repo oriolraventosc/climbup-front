@@ -40,7 +40,7 @@ describe("Given a Header component", () => {
     });
 
     test("Then it should show an anchor with the text 'Iniciar sesión'", () => {
-      const expectedName = "Buscar rocódromos";
+      const expectedName = "Iniciar sesión";
       render(
         <ThemeProvider theme={mainTheme}>
           <GlobalStyles />

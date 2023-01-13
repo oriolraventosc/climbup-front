@@ -49,11 +49,11 @@ describe("Given a Home component", () => {
         </Provider>
       );
 
-      const expecteSelect = screen.getByRole("button", {
+      const expectedSelect = screen.getByRole("button", {
         name: "Instalaciones",
       }) as HTMLElement;
 
-      expect(expecteSelect).toBeInTheDocument();
+      expect(expectedSelect).toBeInTheDocument();
     });
 
     test("Then it should show a 'Actividades' select", () => {
@@ -66,11 +66,11 @@ describe("Given a Home component", () => {
         </Provider>
       );
 
-      const expecteSelect = screen.getByRole("button", {
+      const expectedSelect = screen.getByRole("button", {
         name: "Actividades",
       }) as HTMLElement;
 
-      expect(expecteSelect).toBeInTheDocument();
+      expect(expectedSelect).toBeInTheDocument();
     });
   });
 });
