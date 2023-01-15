@@ -20,3 +20,15 @@ export interface ClimbingWall {
 export interface UiStructure {
   loading: boolean;
 }
+
+export interface UserStructure {
+  email?: string;
+  password?: string;
+  accessToken?: string;
+}
+
+export interface JwtPayloadCustom {
+  id: string;
+  username: string;
+  accesstoken: string;
+}

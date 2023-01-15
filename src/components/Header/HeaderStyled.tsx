@@ -1,6 +1,6 @@
-import { styled, Container } from "@mui/material";
+import { styled } from "@mui/material";
 
-const HeaderStyled = styled(Container)`
+const HeaderStyled = styled("header")`
   z-index: 9;
   position: relative;
   .header-desktop {

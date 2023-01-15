@@ -39,6 +39,17 @@ ul {
 li {
   list-style: none;
 }
+a {
+  color: #6CCFF6;
+}
+a:visited {
+  color: #6CCFF6;
+}
+a:hover {
+  color: #001011;
+  cursor: pointer;
+  transition: 0.2s;
+}
 `;
 
 export default GlobalStyles;

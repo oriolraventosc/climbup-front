@@ -19,6 +19,7 @@
     "@types/react-dom": "^18.0.10",
     "axios": "^0.27.2",
     "hamburger-react": "^2.5.0",
+    "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
@@ -32,7 +33,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:coverage": "react-scripts test --coverage --watchAll=false"
   },
   "eslintConfig": {
     "extends": [
@@ -55,5 +57,15 @@
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
     "msw": "^0.49.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!./src/index.tsx",
+      "!./src/setupTests.ts",
+      "!src/__snapshots__/*.snap",
+      "!src/styles/colors.ts",
+      "!src/styles/globalStyles.ts",
+      "!src/styles/mainTheme.ts"
+    ]
   }
 }
