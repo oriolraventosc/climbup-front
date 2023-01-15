@@ -1,11 +1,13 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import { ClimbingWallReducer } from "./features/climbingWallSlicer/climbingWallSlice";
 import { uiActionsReducer } from "./features/uiSlicer/uiSlicer";
+import { userActionsReducer } from "./features/userSlicer/userSlicer";
 
 export const store = configureStore({
   reducer: {
     climbingWallsReducer: ClimbingWallReducer,
     uiReducer: uiActionsReducer,
+    userReducer: userActionsReducer,
   },
 });
 

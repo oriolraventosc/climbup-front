@@ -5,17 +5,20 @@ import mainTheme from "../../styles/mainTheme";
 import Home from "./Home";
 import { Provider } from "react-redux";
 import { store } from "../../redux/store";
+import { BrowserRouter } from "react-router-dom";
 
 describe("Given a Home component", () => {
   describe("When it is rendered", () => {
     test("Then it should show the text 'No hay resultados'", () => {
       render(
-        <Provider store={store}>
-          <ThemeProvider theme={mainTheme}>
-            <GlobalStyles />
-            <Home />
-          </ThemeProvider>
-        </Provider>
+        <BrowserRouter>
+          <Provider store={store}>
+            <ThemeProvider theme={mainTheme}>
+              <GlobalStyles />
+              <Home />
+            </ThemeProvider>
+          </Provider>
+        </BrowserRouter>
       );
       const text = "No hay resultados";
 
@@ -26,12 +29,14 @@ describe("Given a Home component", () => {
 
     test("Then it should show a texfield", () => {
       render(
-        <Provider store={store}>
-          <ThemeProvider theme={mainTheme}>
-            <GlobalStyles />
-            <Home />
-          </ThemeProvider>
-        </Provider>
+        <BrowserRouter>
+          <Provider store={store}>
+            <ThemeProvider theme={mainTheme}>
+              <GlobalStyles />
+              <Home />
+            </ThemeProvider>
+          </Provider>
+        </BrowserRouter>
       );
 
       const expectedTextField = screen.getByRole("textbox") as HTMLElement;
@@ -41,12 +46,14 @@ describe("Given a Home component", () => {
 
     test("Then it should show a 'Instalaciones' select", () => {
       render(
-        <Provider store={store}>
-          <ThemeProvider theme={mainTheme}>
-            <GlobalStyles />
-            <Home />
-          </ThemeProvider>
-        </Provider>
+        <BrowserRouter>
+          <Provider store={store}>
+            <ThemeProvider theme={mainTheme}>
+              <GlobalStyles />
+              <Home />
+            </ThemeProvider>
+          </Provider>
+        </BrowserRouter>
       );
 
       const expectedSelect = screen.getByRole("button", {
@@ -58,12 +65,14 @@ describe("Given a Home component", () => {
 
     test("Then it should show a 'Actividades' select", () => {
       render(
-        <Provider store={store}>
-          <ThemeProvider theme={mainTheme}>
-            <GlobalStyles />
-            <Home />
-          </ThemeProvider>
-        </Provider>
+        <BrowserRouter>
+          <Provider store={store}>
+            <ThemeProvider theme={mainTheme}>
+              <GlobalStyles />
+              <Home />
+            </ThemeProvider>
+          </Provider>
+        </BrowserRouter>
       );
 
       const expectedSelect = screen.getByRole("button", {

@@ -3,16 +3,23 @@ import Header from "./Header";
 import { ThemeProvider } from "@mui/material";
 import GlobalStyles from "../../styles/globalStyles";
 import mainTheme from "../../styles/mainTheme";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "../../redux/store";
 
 describe("Given a Header component", () => {
   describe("When it is rendered", () => {
     test("Then it should show a heading level 1 title with the text 'climbup'", () => {
       const expectedTitleText = "climbup";
       render(
-        <ThemeProvider theme={mainTheme}>
-          <GlobalStyles />
-          <Header />
-        </ThemeProvider>
+        <BrowserRouter>
+          <Provider store={store}>
+            <ThemeProvider theme={mainTheme}>
+              <GlobalStyles />
+              <Header />
+            </ThemeProvider>
+          </Provider>
+        </BrowserRouter>
       );
 
       const expectedTitle = screen.queryByRole("heading", {
@@ -26,10 +33,14 @@ describe("Given a Header component", () => {
     test("Then it should show an anchor with the text 'Buscar rocódromos'", () => {
       const expectedName = "Buscar rocódromos";
       render(
-        <ThemeProvider theme={mainTheme}>
-          <GlobalStyles />
-          <Header />
-        </ThemeProvider>
+        <BrowserRouter>
+          <Provider store={store}>
+            <ThemeProvider theme={mainTheme}>
+              <GlobalStyles />
+              <Header />
+            </ThemeProvider>
+          </Provider>
+        </BrowserRouter>
       );
 
       const expectedAnchor = screen.queryByLabelText(
@@ -42,10 +53,14 @@ describe("Given a Header component", () => {
     test("Then it should show an anchor with the text 'Iniciar sesión'", () => {
       const expectedName = "Iniciar sesión";
       render(
-        <ThemeProvider theme={mainTheme}>
-          <GlobalStyles />
-          <Header />
-        </ThemeProvider>
+        <BrowserRouter>
+          <Provider store={store}>
+            <ThemeProvider theme={mainTheme}>
+              <GlobalStyles />
+              <Header />
+            </ThemeProvider>
+          </Provider>
+        </BrowserRouter>
       );
 
       const expectedAnchor = screen.queryByLabelText(

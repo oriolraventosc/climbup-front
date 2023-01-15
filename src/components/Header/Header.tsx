@@ -3,11 +3,13 @@ import { Container, Typography } from "@mui/material";
 import LandscapeIcon from "@mui/icons-material/Landscape";
 import HeaderStyled from "./HeaderStyled";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Header = (): JSX.Element => {
   const [isOpen, setOpen] = useState(false);
   const [isScroll, setScroll] = useState(false);
   const [isLogged] = useState(false);
+  const navigate = useNavigate();
   const changeNavBar = () => {
     window.scrollY ? setScroll(true) : setScroll(false);
   };
@@ -46,6 +48,7 @@ const Header = (): JSX.Element => {
                 xs: "3rem",
               },
             }}
+            onClick={() => navigate("/home")}
             aria-label="Volver al inicio"
             aria-hidden="false"
             className={
@@ -110,6 +113,7 @@ const Header = (): JSX.Element => {
                 color: "primary.dark",
               },
             }}
+            onClick={() => navigate("/home")}
             aria-label="Volver al inicio"
             aria-hidden="false"
           />
@@ -158,6 +162,7 @@ const Header = (): JSX.Element => {
                 xs: "1.5rem",
               },
             }}
+            onClick={() => navigate("/home")}
             className="header-mobile__item-open"
           >
             Buscar rocódromos
@@ -176,6 +181,7 @@ const Header = (): JSX.Element => {
                 },
               }}
               className="header-mobile__item-open"
+              onClick={() => navigate("/tus-rocodromos")}
             >
               Tus rocódromos
             </Typography>
@@ -193,6 +199,9 @@ const Header = (): JSX.Element => {
               },
             }}
             className="header-mobile__item-open"
+            onClick={
+              isLogged ? () => navigate("/home") : () => navigate("/login")
+            }
           >
             {isLogged ? "Cerrar sesión" : "Iniciar sesión"}
           </Typography>
@@ -232,6 +241,7 @@ const Header = (): JSX.Element => {
                 xs: "2.5rem",
               },
             }}
+            onClick={() => navigate("/home")}
             className="header-desktop__icon"
           />
           <Typography
@@ -248,6 +258,7 @@ const Header = (): JSX.Element => {
               },
               fontWeight: "bold",
             }}
+            onClick={() => navigate("/home")}
             className="header-desktop__title"
           >
             climbup
@@ -278,6 +289,7 @@ const Header = (): JSX.Element => {
             }}
             className="header-desktop__item"
             aria-label="Buscar rocódromos"
+            onClick={() => navigate("/home")}
           >
             Buscar rocódromos
           </Typography>
@@ -296,6 +308,7 @@ const Header = (): JSX.Element => {
               }}
               className="header-desktop__item"
               aria-label="Buscar rocódromos"
+              onClick={() => navigate("/tus-rocodromos")}
             >
               Tus rocódromos
             </Typography>
@@ -314,6 +327,9 @@ const Header = (): JSX.Element => {
             }}
             className="header-desktop__item"
             aria-label={isLogged ? "Cerrar sesión" : "Iniciar sesión"}
+            onClick={
+              isLogged ? () => navigate("/home") : () => navigate("/login")
+            }
           >
             {isLogged ? "Cerrar sesión" : "Iniciar sesión"}
           </Typography>
