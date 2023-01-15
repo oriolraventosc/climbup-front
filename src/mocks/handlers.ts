@@ -83,6 +83,18 @@ const handlers = [
       );
     }
   ),
+  rest.post(`${apiUrl}/users/login`, async (request, response, context) => {
+    return response.once(context.status(200));
+  }),
+  rest.post(`${apiUrl}/users/login`, async (request, response, context) => {
+    return response.once(context.status(500));
+  }),
+  rest.post(`${apiUrl}/users/register`, async (request, response, context) => {
+    return response.once(context.status(201), context.json({}));
+  }),
+  rest.post(`${apiUrl}/users/register`, async (request, response, context) => {
+    return response.once(context.status(500), context.json({}));
+  }),
 ];
 
 export default handlers;
