@@ -7,7 +7,10 @@ import { JwtPayloadCustom, UserStructure } from "../../types/types";
 import axios from "axios";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { userLoginActionCreator } from "../../redux/features/userSlicer/userSlicer";
+import {
+  userLoginActionCreator,
+  userLogoutActionCreator,
+} from "../../redux/features/userSlicer/userSlicer";
 import jwtDecode from "jwt-decode";
 
 const useUser = () => {
@@ -51,7 +54,11 @@ const useUser = () => {
       dispatch(closeLoadingActionCreator());
     }
   };
-  return { register, login };
+  const logout = () => {
+    window.localStorage.removeItem("token");
+    dispatch(userLogoutActionCreator());
+  };
+  return { register, login, logout };
 };
 
 export default useUser;

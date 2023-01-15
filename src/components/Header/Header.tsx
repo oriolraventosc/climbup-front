@@ -5,12 +5,14 @@ import HeaderStyled from "./HeaderStyled";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../redux/hooks";
+import useUser from "../../hooks/user/useUser";
 
 const Header = (): JSX.Element => {
   const [isOpen, setOpen] = useState(false);
   const [isScroll, setScroll] = useState(false);
   const isLogged = useAppSelector((state) => state.userReducer.isLogged);
   const navigate = useNavigate();
+  const { logout } = useUser();
   const changeNavBar = () => {
     window.scrollY ? setScroll(true) : setScroll(false);
   };
@@ -200,9 +202,7 @@ const Header = (): JSX.Element => {
               },
             }}
             className="header-mobile__item-open"
-            onClick={
-              isLogged ? () => navigate("/home") : () => navigate("/login")
-            }
+            onClick={isLogged ? () => logout() : () => navigate("/login")}
           >
             {isLogged ? "Cerrar sesión" : "Iniciar sesión"}
           </Typography>
@@ -328,9 +328,7 @@ const Header = (): JSX.Element => {
             }}
             className="header-desktop__item"
             aria-label={isLogged ? "Cerrar sesión" : "Iniciar sesión"}
-            onClick={
-              isLogged ? () => navigate("/home") : () => navigate("/login")
-            }
+            onClick={isLogged ? () => logout() : () => navigate("/login")}
           >
             {isLogged ? "Cerrar sesión" : "Iniciar sesión"}
           </Typography>
