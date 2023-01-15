@@ -6,9 +6,12 @@ import LoginPage from "../../pages/LoginPage/LoginPage";
 import RegisterPage from "../../pages/RegisterPage/RegisterPage";
 import { useAppSelector } from "../../redux/hooks";
 import Loading from "../Loading/Loading";
+import useToken from "../../hooks/useToken/useToken";
 
 function App() {
   const loading = useAppSelector((uiReducer) => uiReducer.uiReducer.loading);
+  const { getToken } = useToken();
+  getToken();
   return (
     <>
       <Suspense fallback={<Loading />} />
