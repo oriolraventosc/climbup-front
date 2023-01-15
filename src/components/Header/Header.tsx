@@ -4,11 +4,12 @@ import LandscapeIcon from "@mui/icons-material/Landscape";
 import HeaderStyled from "./HeaderStyled";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAppSelector } from "../../redux/hooks";
 
 const Header = (): JSX.Element => {
   const [isOpen, setOpen] = useState(false);
   const [isScroll, setScroll] = useState(false);
-  const [isLogged] = useState(false);
+  const isLogged = useAppSelector((state) => state.userReducer.isLogged);
   const navigate = useNavigate();
   const changeNavBar = () => {
     window.scrollY ? setScroll(true) : setScroll(false);
