@@ -32,33 +32,27 @@ const Header = (): JSX.Element => {
         }}
         aria-label="mobile menu"
       >
-        <Container
-          disableGutters
-          maxWidth={false}
+        <LandscapeIcon
           sx={{
+            fontSize: {
+              xxl: "6rem",
+              xl: "6rem",
+              lg: "6rem",
+              md: "3.5rem",
+              sm: "3rem",
+              xs: "3rem",
+            },
             pl: "1rem",
             gap: "1rem",
           }}
-        >
-          <LandscapeIcon
-            sx={{
-              fontSize: {
-                xxl: "6rem",
-                xl: "6rem",
-                lg: "6rem",
-                md: "3.5rem",
-                sm: "3rem",
-                xs: "3rem",
-              },
-            }}
-            onClick={() => navigate("/home")}
-            aria-label="Volver al inicio"
-            aria-hidden="false"
-            className={
-              isScroll ? "header-mobile__icon-scroll" : "header-mobile__icon"
-            }
-          />
-        </Container>
+          onClick={() => navigate("/home")}
+          aria-label="Volver al inicio"
+          aria-hidden="false"
+          data-testid="home-icon"
+          className={
+            isScroll ? "header-mobile__icon-scroll" : "header-mobile__icon"
+          }
+        />
         <Container
           disableGutters
           maxWidth={false}

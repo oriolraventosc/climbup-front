@@ -5,7 +5,7 @@ interface UserState extends UserStructure {
   isLogged: boolean;
 }
 
-const UserInitialState: UserState = {
+export const UserInitialState: UserState = {
   email: "",
   password: "",
   isLogged: false,

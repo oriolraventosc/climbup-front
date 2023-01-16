@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import { Box, Button, TextField, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import UserFormStyled from "./UserFormStyled";
 
 interface LoginRegisterForm extends PropsWithChildren {
@@ -62,10 +62,11 @@ const UserForm = ({
           className="input-field"
           margin="normal"
           fullWidth
-          name="password"
+          name="Contraseña"
           onChange={handleFormChange}
           label="Contraseña"
           aria-label="Contraseña"
+          aria-invalid="false"
           type="password"
           id="password"
         />
@@ -103,7 +104,7 @@ const UserForm = ({
             pb: "3rem",
           }}
         >
-          {preLink} <Link to={link}>{linkText}</Link>
+          {preLink} <NavLink to={link}>{linkText}</NavLink>
         </Typography>
       </Box>
     </UserFormStyled>

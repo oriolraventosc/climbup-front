@@ -9,7 +9,7 @@ const FilterContainerStyled = styled.section`
   padding-top: 60px;
   .search {
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   .filter {
     width: 100%;
@@ -23,7 +23,7 @@ const FilterContainerStyled = styled.section`
     }
     .filter {
       width: 25%;
-      margin-top: 1rem;
+      margin-top: 2rem;
     }
   }
 `;
