@@ -2,6 +2,7 @@ import { Container, styled } from "@mui/material";
 
 const LoadMoreContainerStyled = styled(Container)`
   margin-bottom: 1rem;
+  margin-top: 2rem;
   .load-more {
     width: 70vw;
     @media (min-width: 426px) {
