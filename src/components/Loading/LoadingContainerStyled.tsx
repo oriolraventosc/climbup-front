@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import StyledTheme from "../../styles/colors";
 
 const LoadingContainerStyled = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #6ccff6;
+  background-color: ${StyledTheme.main};
   width: 100vw;
   position: fixed;
   left: 0;
@@ -14,7 +15,7 @@ const LoadingContainerStyled = styled.div`
     padding: 0;
   }
   .loader {
-    color: #001011;
+    color: ${StyledTheme.dark};
     font-size: 45px;
     text-indent: -9999em;
     overflow: hidden;

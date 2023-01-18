@@ -1,4 +1,5 @@
-import { styled } from "@mui/material";
+import styled from "styled-components";
+import StyledTheme from "../../styles/colors";
 
 const HeaderStyled = styled("header")`
   z-index: 9;
@@ -10,13 +11,13 @@ const HeaderStyled = styled("header")`
     padding-right: 0.514rem;
   }
   .header-mobile-scroll {
-    background-color: #6ccff6;
+    background-color: ${StyledTheme.main};
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .header-mobile {
-    background-color: #001011;
+    background-color: ${StyledTheme.dark};
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,25 +29,25 @@ const HeaderStyled = styled("header")`
       transform: translate(0);
     }
     &__item-open {
-      color: #001011;
+      color: ${StyledTheme.dark};
     }
     &__item-open:hover {
-      color: #fff;
+      color: ${StyledTheme.white};
       cursor: pointer;
       transition: 0.2s;
     }
     &__icon {
-      color: #6ccff6;
+      color: ${StyledTheme.main};
     }
     &__icon-scroll {
-      color: #001011;
+      color: ${StyledTheme.dark};
     }
     &__icon:hover {
-      color: #fff;
+      color: ${StyledTheme.white};
       transition: 0.2s;
     }
     &__icon-scroll:hover {
-      color: #fff;
+      color: ${StyledTheme.white};
       transition: 0.2s;
     }
   }
@@ -61,49 +62,49 @@ const HeaderStyled = styled("header")`
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #001011;
+      background-color: ${StyledTheme.dark};
       &-scroll {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #6ccff6;
+        background-color: ${StyledTheme.main};
       }
       &__icon {
-        color: #6ccff6;
+        color: ${StyledTheme.main};
       }
       &__icon-scroll {
-        color: #001011;
+        color: ${StyledTheme.dark};
       }
       &__icon-scroll:hover {
-        color: #fff;
+        color: ${StyledTheme.white};
         cursor: pointer;
         transition: 0.2s;
       }
       &__icon:hover {
-        color: #fff;
+        color: ${StyledTheme.white};
         cursor: pointer;
         transition: 0.2s;
       }
       &__title {
-        color: #fff;
+        color: ${StyledTheme.white};
       }
       &__title-scroll {
-        color: #001011;
+        color: ${StyledTheme.dark};
       }
       &__item {
-        color: #fff;
+        color: ${StyledTheme.white};
       }
       &__item-scroll {
-        color: #001011;
+        color: ${StyledTheme.dark};
       }
       &__title:hover {
         cursor: pointer;
-        color: #6ccff6;
+        color: ${StyledTheme.main};
         transition: 0.2s;
       }
       &__item:hover {
         cursor: pointer;
-        color: #6ccff6;
+        color: ${StyledTheme.main};
         transition: 0.2s;
       }
     }

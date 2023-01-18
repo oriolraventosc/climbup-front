@@ -1,4 +1,5 @@
 import { styled } from "@mui/material";
+import StyledTheme from "../../styles/colors";
 
 const UserFormStyled = styled("div")`
   background-color: rgb(255, 255, 252, 0.9);
@@ -10,14 +11,14 @@ const UserFormStyled = styled("div")`
     text-align: center;
   }
   button {
-    background-color: #001011;
-    color: #fffffc;
+    background-color: ${StyledTheme.dark};
+    color: ${StyledTheme.light};
     height: 55px;
     box-shadow: none;
   }
   button:hover {
-    background-color: #6ccff6;
-    color: #001011;
+    background-color: ${StyledTheme.main};
+    color: ${StyledTheme.dark};
     box-shadow: none;
   }
   h2 {

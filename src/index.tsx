@@ -8,6 +8,8 @@ import App from "./components/App/App";
 import "./index.css";
 import mainTheme from "./styles/mainTheme";
 import GlobalStyles from "./styles/globalStyles";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
+import StyledTheme from "./styles/colors";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
@@ -17,8 +19,10 @@ root.render(
     <BrowserRouter>
       <Provider store={store}>
         <ThemeProvider theme={mainTheme}>
-          <GlobalStyles />
-          <App />
+          <StyledThemeProvider theme={StyledTheme}>
+            <GlobalStyles />
+            <App />
+          </StyledThemeProvider>
         </ThemeProvider>
       </Provider>
     </BrowserRouter>

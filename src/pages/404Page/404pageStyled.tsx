@@ -1,4 +1,5 @@
 import { styled, Container } from "@mui/material";
+import StyledTheme from "../../styles/colors";
 
 const NotFoundPageStyled = styled(Container)`
   padding-top: 30px;
@@ -17,12 +18,12 @@ const NotFoundPageStyled = styled(Container)`
     @media (min-width: 1024px) {
       width: 20vw;
     }
-    background-color: #001011;
-    color: #fffffc;
+    background-color: ${StyledTheme.dark};
+    color: ${StyledTheme.light};
   }
   .load-more:hover {
-    background-color: #6ccff6;
-    color: #001011;
+    background-color: ${StyledTheme.main};
+    color: ${StyledTheme.dark};
   }
   @media (min-width: 1024px) {
     height: 100vh;
