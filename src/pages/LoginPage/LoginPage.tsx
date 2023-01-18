@@ -41,6 +41,12 @@ const LoginPage = (): JSX.Element => {
           link="/register"
           linkText="Regístrate ahora"
           title="Inicia sesión"
+          errorEmail={initialForm.email.length < 4 && initialForm.email !== ""}
+          errorEmailText="Este campo no puede estar vacío"
+          errorPassword={
+            initialForm.password?.length < 5 && initialForm.password !== ""
+          }
+          errorPasswordText="Introduce como mínimo 5 carácteres"
           handleFormChange={handleChange}
           handleSubmit={onSubmit}
         />

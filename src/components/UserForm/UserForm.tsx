@@ -9,6 +9,10 @@ interface LoginRegisterForm extends PropsWithChildren {
   preLink: string;
   link: string;
   linkText: string;
+  errorEmail: boolean;
+  errorEmailText: string;
+  errorPassword: boolean;
+  errorPasswordText: string;
   handleSubmit: (event: React.SyntheticEvent) => Promise<void>;
   handleFormChange: (
     event:
@@ -25,6 +29,10 @@ const UserForm = ({
   linkText,
   handleSubmit,
   handleFormChange,
+  errorEmail,
+  errorEmailText,
+  errorPassword,
+  errorPasswordText,
 }: LoginRegisterForm): JSX.Element => {
   return (
     <UserFormStyled>
@@ -50,6 +58,8 @@ const UserForm = ({
         <TextField
           className="input-field"
           margin="normal"
+          error={errorEmail}
+          helperText={errorEmailText}
           fullWidth
           name="email"
           onChange={handleFormChange}
@@ -63,6 +73,8 @@ const UserForm = ({
           margin="normal"
           fullWidth
           name="Contraseña"
+          error={errorPassword}
+          helperText={errorPasswordText}
           onChange={handleFormChange}
           label="Contraseña"
           aria-label="Contraseña"
