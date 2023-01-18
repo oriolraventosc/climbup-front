@@ -1,4 +1,5 @@
 import { Container, styled } from "@mui/material";
+import StyledTheme from "../../styles/colors";
 
 const LoadMoreContainerStyled = styled(Container)`
   margin-bottom: 1rem;
@@ -11,12 +12,12 @@ const LoadMoreContainerStyled = styled(Container)`
     @media (min-width: 1024px) {
       width: 15vw;
     }
-    background-color: #001011;
-    color: #fffffc;
+    background-color: ${StyledTheme.dark};
+    color: ${StyledTheme.light};
   }
   .load-more:hover {
-    background-color: #6ccff6;
-    color: #001011;
+    background-color: ${StyledTheme.main};
+    color: ${StyledTheme.dark};
   }
 `;
 
