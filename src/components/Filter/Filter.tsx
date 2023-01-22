@@ -34,7 +34,7 @@ const Filter = (): JSX.Element => {
       <TextField
         id="outlined-basic"
         variant="outlined"
-        placeholder="Introduce una localización"
+        placeholder="Nombre de ciudad/pueblo"
         className="search"
         aria-label="search"
         onChange={handleChangeLocation}
