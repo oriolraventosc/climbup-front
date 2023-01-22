@@ -38,6 +38,7 @@ const Filter = (): JSX.Element => {
         className="search"
         aria-label="search"
         onChange={handleChangeLocation}
+        value={location.toLowerCase()}
       />
       <FormControl className="filter">
         <InputLabel id="instalaciones">Instalaciones</InputLabel>
