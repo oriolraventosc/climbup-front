@@ -6,12 +6,15 @@ import {
   Select,
   SelectChangeEvent,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useClimbingWall from "../../hooks/climbingWall/useClimbingWall";
 import FilterContainerStyled from "./FilterContainerStyled";
 
 const Filter = (): JSX.Element => {
   const [installations, setInstallation] = useState("");
   const [activities, setActivities] = useState("");
+  const [location, setLocation] = useState("");
+  const { loadAllClimbingWalls } = useClimbingWall();
 
   const handleChangeInstallation = (event: SelectChangeEvent) => {
     setInstallation(event.target.value);
@@ -19,6 +22,13 @@ const Filter = (): JSX.Element => {
   const handleChangeActivities = (event: SelectChangeEvent) => {
     setActivities(event.target.value);
   };
+
+  const handleChangeLocation = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setLocation(event.target.value);
+  };
+  useEffect(() => {
+    loadAllClimbingWalls(location, activities, installations);
+  }, [loadAllClimbingWalls, location, activities, installations]);
   return (
     <FilterContainerStyled>
       <TextField
@@ -27,6 +37,7 @@ const Filter = (): JSX.Element => {
         placeholder="Introduce una localización"
         className="search"
         aria-label="search"
+        onChange={handleChangeLocation}
       />
       <FormControl className="filter">
         <InputLabel id="instalaciones">Instalaciones</InputLabel>
