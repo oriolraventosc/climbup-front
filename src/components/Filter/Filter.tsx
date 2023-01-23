@@ -37,6 +37,7 @@ const Filter = (): JSX.Element => {
         placeholder="Nombre de ciudad/pueblo"
         className="search"
         aria-label="search"
+        aria-invalid="false"
         onChange={handleChangeLocation}
         value={location.toLowerCase()}
       />
