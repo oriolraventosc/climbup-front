@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const FilterContainerStyled = styled.section`
+  animation: fadeIn 1.5s;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,6 +25,15 @@ const FilterContainerStyled = styled.section`
     .filter {
       width: 25%;
       margin-top: 2rem;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 `;
