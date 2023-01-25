@@ -15,6 +15,7 @@ jest.mock("../../hooks/climbingWall/useClimbingWall", () => {
     loadAllClimbingWalls: mockFilter,
   });
 });
+const dispatch = jest.spyOn(store, "dispatch");
 
 describe("Given a Filter component", () => {
   describe("When it is rendered", () => {
@@ -108,7 +109,7 @@ describe("Given a Filter component", () => {
       });
       await userEvent.click(escuelaDeEscaladaOption);
 
-      expect(mockFilter).toHaveBeenCalled();
+      expect(dispatch).toHaveBeenCalled();
     });
   });
 });
