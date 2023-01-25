@@ -1,21 +1,19 @@
-import { TextField } from "@mui/material";
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-} from "@mui/material";
+import { SelectChangeEvent, TextField } from "@mui/material";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { useEffect, useState } from "react";
-import useClimbingWall from "../../hooks/climbingWall/useClimbingWall";
+import {
+  addActivityActionCreator,
+  addInstallationActionCreator,
+  addLocationActionCreator,
+} from "../../redux/features/FIlterSlicer/FilterSlice";
+import { useAppDispatch } from "../../redux/hooks";
 import FilterContainerStyled from "./FilterContainerStyled";
 
 const Filter = (): JSX.Element => {
-  const [installations, setInstallation] = useState("");
-  const [activities, setActivities] = useState("");
+  const dispatch = useAppDispatch();
+  const [installation, setInstallation] = useState("");
+  const [activity, setActivities] = useState("");
   const [location, setLocation] = useState("");
-  const { loadAllClimbingWalls } = useClimbingWall();
-
   const handleChangeInstallation = (event: SelectChangeEvent) => {
     setInstallation(event.target.value);
   };
@@ -27,8 +25,10 @@ const Filter = (): JSX.Element => {
     setLocation(event.target.value);
   };
   useEffect(() => {
-    loadAllClimbingWalls(location, activities, installations);
-  }, [loadAllClimbingWalls, location, activities, installations]);
+    dispatch(addInstallationActionCreator(installation));
+    dispatch(addActivityActionCreator(activity));
+    dispatch(addLocationActionCreator(location));
+  }, [installation, activity, location, dispatch]);
   return (
     <FilterContainerStyled>
       <TextField
@@ -45,7 +45,7 @@ const Filter = (): JSX.Element => {
         <InputLabel id="instalaciones">Instalaciones</InputLabel>
         <Select
           id="instalaciones"
-          value={installations}
+          value={installation}
           label="Instalaciones"
           onChange={handleChangeInstallation}
         >
@@ -71,7 +71,7 @@ const Filter = (): JSX.Element => {
         <InputLabel id="actividades">Actividades</InputLabel>
         <Select
           id="actividades"
-          value={activities}
+          value={activity}
           label="Actividades"
           onChange={handleChangeActivities}
         >

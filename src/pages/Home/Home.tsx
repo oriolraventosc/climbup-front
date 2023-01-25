@@ -9,14 +9,17 @@ import Filter from "../../components/Filter/Filter";
 import NoResults from "../../components/NoResults/NoResults";
 
 const Home = (): JSX.Element => {
+  const { activity, installation, limit, location } = useAppSelector(
+    (filterReducer) => filterReducer.filterReducer
+  );
   const { loadAllClimbingWalls } = useClimbingWall();
   const climbingWalls = useAppSelector(
     (climbingWallsReducer) =>
       climbingWallsReducer.climbingWallsReducer.climbingWalls
   );
   useEffect(() => {
-    loadAllClimbingWalls();
-  }, [loadAllClimbingWalls]);
+    loadAllClimbingWalls(location, activity, installation, limit);
+  }, [loadAllClimbingWalls, location, activity, installation, limit]);
   return (
     <>
       <Header />

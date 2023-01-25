@@ -1,7 +1,17 @@
 import { Button } from "@mui/material";
+import { useState } from "react";
+import { increaseLimitActionCreator } from "../../redux/features/FIlterSlicer/FilterSlice";
+import { useAppDispatch } from "../../redux/hooks";
 import LoadMoreContainerStyled from "./LoadMoreStyled";
 
 const LoadMore = (): JSX.Element => {
+  const dispatch = useAppDispatch();
+  const showedClimbingWalls = 6;
+  const [limit, setLimit] = useState(6);
+  const handleMoreClimbingWalls = () => {
+    setLimit(limit + showedClimbingWalls);
+    dispatch(increaseLimitActionCreator());
+  };
   return (
     <LoadMoreContainerStyled
       disableGutters
@@ -10,6 +20,7 @@ const LoadMore = (): JSX.Element => {
     >
       <Button
         className="load-more"
+        onClick={handleMoreClimbingWalls}
         sx={{
           fontSize: {
             xxl: "1.8rem",
