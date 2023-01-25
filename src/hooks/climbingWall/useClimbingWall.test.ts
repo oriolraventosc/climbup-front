@@ -27,7 +27,7 @@ describe("Given a useClimbingWall custom hook", () => {
         wrapper: ProviderWrapper,
       });
 
-      await result.current.loadAllClimbingWalls("", "", "Cafeteria");
+      await result.current.loadAllClimbingWalls("", "", "Cafeteria", 6);
 
       expect(dispatch).toHaveBeenCalledWith(openLoadingActionCreator());
       expect(dispatch).toHaveBeenCalledWith(closeLoadingActionCreator());
@@ -38,7 +38,7 @@ describe("Given a useClimbingWall custom hook", () => {
         wrapper: ProviderWrapper,
       });
 
-      await result.current.loadAllClimbingWalls("", "Grupos", "");
+      await result.current.loadAllClimbingWalls("", "Grupos", "", 6);
 
       expect(dispatch).toHaveBeenCalledWith(openLoadingActionCreator());
       expect(dispatch).toHaveBeenCalledWith(closeLoadingActionCreator());
@@ -49,7 +49,7 @@ describe("Given a useClimbingWall custom hook", () => {
         wrapper: ProviderWrapper,
       });
 
-      await result.current.loadAllClimbingWalls("terrassa", "", "");
+      await result.current.loadAllClimbingWalls("terrassa", "", "", 6);
 
       expect(dispatch).toHaveBeenCalled();
     });
@@ -59,7 +59,7 @@ describe("Given a useClimbingWall custom hook", () => {
         wrapper: ProviderWrapper,
       });
 
-      await result.current.loadAllClimbingWalls("rubí", "", "Cafeteria");
+      await result.current.loadAllClimbingWalls("rubí", "", "Cafeteria", 6);
 
       expect(dispatch).toHaveBeenCalled();
     });
@@ -69,7 +69,7 @@ describe("Given a useClimbingWall custom hook", () => {
         wrapper: ProviderWrapper,
       });
 
-      await result.current.loadAllClimbingWalls("rubí", "Grupos", "");
+      await result.current.loadAllClimbingWalls("rubí", "Grupos", "", 6);
 
       expect(dispatch).toHaveBeenCalled();
     });
@@ -79,7 +79,7 @@ describe("Given a useClimbingWall custom hook", () => {
         wrapper: ProviderWrapper,
       });
 
-      await result.current.loadAllClimbingWalls("", "Grupos", "Cafeteria");
+      await result.current.loadAllClimbingWalls("", "Grupos", "Cafeteria", 6);
 
       expect(dispatch).toHaveBeenCalledWith(openLoadingActionCreator());
       expect(dispatch).toHaveBeenCalledWith(closeLoadingActionCreator());
@@ -90,7 +90,12 @@ describe("Given a useClimbingWall custom hook", () => {
         wrapper: ProviderWrapper,
       });
 
-      await result.current.loadAllClimbingWalls("rubí", "Grupos", "Cafeteria");
+      await result.current.loadAllClimbingWalls(
+        "rubí",
+        "Grupos",
+        "Cafeteria",
+        6
+      );
 
       expect(dispatch).toHaveBeenCalled();
     });
