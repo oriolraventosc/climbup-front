@@ -7,7 +7,7 @@ interface Filter {
   limit: number;
 }
 
-const filterInitialState: Filter = {
+export const filterInitialState: Filter = {
   installation: "",
   activity: "",
   location: "",
