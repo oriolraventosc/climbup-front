@@ -3,6 +3,14 @@ import StyledTheme from "../styles/colors";
 
 const ClimbingWallDetailStyled = styled("section")`
   padding-top: 60px;
+  a {
+    color: ${StyledTheme.dark};
+  }
+  a:hover {
+    color: ${StyledTheme.main};
+    transition: 0.3s;
+    cursor: pointer;
+  }
   .climbingwall-image {
     width: 100vw;
     position: relative;
@@ -46,9 +54,19 @@ const ClimbingWallDetailStyled = styled("section")`
     }
     .article-prices-contact {
       background-color: ${StyledTheme.whiteBox};
-      height: 190px;
+      height: fit-content;
       border-radius: 5px;
       width: 100%;
+      min-height: 190px;
+    }
+    &__contact-prices {
+      text-align: left;
+      display: block;
+      inline-size: 80%;
+      overflow-wrap: break-word;
+      @media (min-width: 426px) {
+        inline-size: 90%;
+      }
     }
   }
   img {
