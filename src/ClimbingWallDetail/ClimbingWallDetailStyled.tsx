@@ -16,7 +16,7 @@ const ClimbingWallDetailStyled = styled("section")`
     background-color: ${StyledTheme.whiteBox};
     border-radius: 5px;
     width: 100%;
-    min-height: 400px;
+    min-height: 467.98px;
   }
   .article-installations-activities p:last-child {
     padding-bottom: 1.5rem;
@@ -46,7 +46,7 @@ const ClimbingWallDetailStyled = styled("section")`
     }
     .article-prices-contact {
       background-color: ${StyledTheme.whiteBox};
-      height: 250px;
+      height: 190px;
       border-radius: 5px;
       width: 100%;
     }
