@@ -419,7 +419,7 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
               pl: "1.5rem",
             }}
           >
-            <a href={`${website}`} target="_blank" rel="noreferrer">
+            <a href={`//${website}`} target="_blank" rel="noreferrer">
               {website}
             </a>
           </Typography>
