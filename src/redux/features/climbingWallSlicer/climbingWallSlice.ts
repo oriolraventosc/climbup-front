@@ -41,10 +41,16 @@ const climbingWallSlice = createSlice({
       ...initialState,
       climbingWalls: [...action.payload],
     }),
+    loadClimbingWall: (initialState, action: PayloadAction<ClimbingWall>) => ({
+      ...initialState,
+      climbingWall: { ...action.payload },
+    }),
   },
 });
 
 export const ClimbingWallReducer = climbingWallSlice.reducer;
 
-export const { loadAllclimbingWalls: loadAllclimbingWallsActionCreator } =
-  climbingWallSlice.actions;
+export const {
+  loadAllclimbingWalls: loadAllclimbingWallsActionCreator,
+  loadClimbingWall: loadClimbingWallActionCreator,
+} = climbingWallSlice.actions;

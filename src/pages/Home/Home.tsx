@@ -34,6 +34,7 @@ const Home = (): JSX.Element => {
                 name={climbingWall.name}
                 key={index}
                 picture1={climbingWall.picture1}
+                id={climbingWall.id}
               />
             ))}
           </HomeStyled>

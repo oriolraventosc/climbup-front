@@ -7,6 +7,7 @@ import RegisterPage from "../../pages/RegisterPage/RegisterPage";
 import { useAppSelector } from "../../redux/hooks";
 import Loading from "../Loading/Loading";
 import useToken from "../../hooks/useToken/useToken";
+import DetailsPage from "../../pages/Details/DetailsPage";
 
 function App() {
   const loading = useAppSelector((uiReducer) => uiReducer.uiReducer.loading);
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/:id" element={<DetailsPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="*" element={<NotFoundPage />} />

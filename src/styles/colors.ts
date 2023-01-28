@@ -4,6 +4,7 @@ const StyledTheme = {
   light: "#FFFFFC",
   contrastText: "#757780",
   white: "#fff",
+  whiteBox: "#F5F5F5",
 };
 
 export default StyledTheme;

@@ -1,6 +1,9 @@
 import axios from "axios";
 import { useCallback } from "react";
-import { loadAllclimbingWallsActionCreator } from "../../redux/features/climbingWallSlicer/climbingWallSlice";
+import {
+  loadAllclimbingWallsActionCreator,
+  loadClimbingWallActionCreator,
+} from "../../redux/features/climbingWallSlicer/climbingWallSlice";
 import {
   closeLoadingActionCreator,
   openLoadingActionCreator,
@@ -99,7 +102,23 @@ const useClimbingWall = () => {
     [dispatch, apiUrl]
   );
 
-  return { loadAllClimbingWalls };
+  const loadClimbingWall = useCallback(
+    async (id: string) => {
+      const url = `${apiUrl}/climbingWalls/${id}`;
+      try {
+        dispatch(openLoadingActionCreator());
+        const response = await axios.get(url);
+        const apiResponse = response.data;
+        dispatch(loadClimbingWallActionCreator(apiResponse.climbingWall));
+        dispatch(closeLoadingActionCreator());
+      } catch {
+        dispatch(closeLoadingActionCreator());
+      }
+    },
+    [apiUrl, dispatch]
+  );
+
+  return { loadAllClimbingWalls, loadClimbingWall };
 };
 
 export default useClimbingWall;

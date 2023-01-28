@@ -1,15 +1,18 @@
 import { Container, Typography } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import ClimbingWallStyled from "./ClimbingWallStyled";
+import { useNavigate } from "react-router-dom";
 
 interface ClimbingWallProps {
   name: string;
   description: string;
   address: string;
   picture1: string;
+  id: string;
 }
 
 const ClimbingWall = (climbingWall: ClimbingWallProps): JSX.Element => {
+  const navigate = useNavigate();
   return (
     <ClimbingWallStyled
       disableGutters
@@ -22,6 +25,7 @@ const ClimbingWall = (climbingWall: ClimbingWallProps): JSX.Element => {
         alignItems: "center",
         border: "1px solid rgb(0, 16, 17, 0.1)",
       }}
+      onClick={() => navigate(`/${climbingWall.id}`)}
     >
       <Container
         disableGutters
