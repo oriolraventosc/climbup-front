@@ -361,7 +361,7 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
             Tarifas
           </Typography>
           <Typography
-            className="climbingwall-information__title"
+            className="climbingwall-information__contact-prices"
             sx={{
               fontSize: {
                 xxl: "2rem",
@@ -403,7 +403,7 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
             Datos de contacto
           </Typography>
           <Typography
-            className="climbingwall-information__title"
+            className="climbingwall-information__contact-prices"
             sx={{
               fontSize: {
                 xxl: "2rem",
@@ -419,10 +419,12 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
               pl: "1.5rem",
             }}
           >
-            {website}
+            <a href={`${website}`} target="_blank" rel="noreferrer">
+              {website}
+            </a>
           </Typography>
           <Typography
-            className="climbingwall-information__title"
+            className="climbingwall-information__contact-prices"
             sx={{
               fontSize: {
                 xxl: "2rem",
@@ -438,10 +440,10 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
               pl: "1.5rem",
             }}
           >
-            {email}
+            <a href={`mailto: ${email}`}>{email}</a>
           </Typography>
           <Typography
-            className="climbingwall-information__title"
+            className="climbingwall-information__contact-prices"
             sx={{
               fontSize: {
                 xxl: "2rem",
@@ -457,7 +459,7 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
               pl: "1.5rem",
             }}
           >
-            {telephone}
+            <a href={`tel: ${telephone}`}>{telephone}</a>
           </Typography>
         </article>
       </Container>
