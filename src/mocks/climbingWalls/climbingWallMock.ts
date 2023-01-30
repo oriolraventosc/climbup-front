@@ -17,5 +17,7 @@ export const climbingWallsMock = [
     picture3: "dracdepedra.jpg",
     picture4: "dracdepedra.jpg",
     id: "1234",
+    lat: 12345,
+    lng: 12345,
   },
 ];

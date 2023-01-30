@@ -27,6 +27,8 @@ export const ClimbingWallInitialState: ClimbingWallState = {
     picture2: "",
     picture3: "",
     picture4: "",
+    lat: 0,
+    lng: 0,
   },
 };
 

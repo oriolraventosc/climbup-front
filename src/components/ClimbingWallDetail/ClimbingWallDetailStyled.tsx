@@ -1,8 +1,9 @@
 import { styled } from "@mui/material";
-import StyledTheme from "../styles/colors";
+import StyledTheme from "../../styles/colors";
 
 const ClimbingWallDetailStyled = styled("section")`
   padding-top: 60px;
+  padding-bottom: 1rem;
   a {
     color: ${StyledTheme.dark};
   }
@@ -10,6 +11,13 @@ const ClimbingWallDetailStyled = styled("section")`
     color: ${StyledTheme.main};
     transition: 0.3s;
     cursor: pointer;
+  }
+  .leaflet {
+    width: 100%;
+    height: 300px;
+    @media (min-width: 426px) {
+      height: 450px;
+    }
   }
   .climbingwall-image {
     width: 100vw;
@@ -48,7 +56,7 @@ const ClimbingWallDetailStyled = styled("section")`
     padding-bottom: 1rem;
     .article {
       background-color: ${StyledTheme.whiteBox};
-      height: 400px;
+      height: 450px;
       border-radius: 5px;
       width: 100%;
     }
@@ -69,12 +77,12 @@ const ClimbingWallDetailStyled = styled("section")`
       }
     }
   }
-  img {
-    border-radius: 5px;
-  }
   .carrousel {
     width: 100%;
     height: 100%;
+    img {
+      border-radius: 5px;
+    }
   }
 
   .conteCarrousel {
