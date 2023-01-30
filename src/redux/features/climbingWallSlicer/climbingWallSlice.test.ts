@@ -1,8 +1,12 @@
-import { climbingWallsMock } from "../../../mocks/climbingWalls/climbingWallMock";
+import {
+  climbingWallDetailMock,
+  climbingWallsMock,
+} from "../../../mocks/climbingWalls/climbingWallMock";
 import {
   loadAllclimbingWallsActionCreator,
   ClimbingWallReducer,
   ClimbingWallInitialState,
+  loadClimbingWallActionCreator,
 } from "./climbingWallSlice";
 
 describe("Given a climbingWall reducer", () => {
@@ -29,7 +33,24 @@ describe("Given a climbingWall reducer", () => {
           picture2: "",
           picture3: "",
           picture4: "",
+          lat: 0,
+          lng: 0,
         },
+      };
+
+      const newState = ClimbingWallReducer(ClimbingWallInitialState, action);
+
+      expect(newState).toStrictEqual(expectedState);
+    });
+  });
+
+  describe("When it is invoked with the method loadClimbingWallsActionCreator", () => {
+    test("Then it should return a climbing wall detail", () => {
+      const action = loadClimbingWallActionCreator(climbingWallDetailMock);
+      const expectedState = {
+        privateClimbingWalls: [],
+        climbingWalls: [],
+        climbingWall: climbingWallDetailMock,
       };
 
       const newState = ClimbingWallReducer(ClimbingWallInitialState, action);

@@ -70,6 +70,9 @@
       "!src/styles/colors.ts",
       "!src/styles/globalStyles.ts",
       "!src/styles/mainTheme.ts"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)"
     ]
   }
 }

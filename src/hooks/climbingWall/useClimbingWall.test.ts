@@ -110,4 +110,27 @@ describe("Given a useClimbingWall custom hook", () => {
       expect(dispatch).toHaveBeenCalledWith(closeLoadingActionCreator());
     });
   });
+
+  describe("When it is invoked with the method loadClimbingWall", () => {
+    test("Then it should call it's dispatch method with openLoadingActionCreator and closeLoadingActionCreator", async () => {
+      const { result } = renderHook(() => useClimbingWall(), {
+        wrapper: ProviderWrapper,
+      });
+
+      await result.current.loadClimbingWall("1234");
+
+      expect(dispatch).toHaveBeenCalledWith(openLoadingActionCreator());
+      expect(dispatch).toHaveBeenCalledWith(closeLoadingActionCreator());
+    });
+
+    test("Then when an error happens it should call it's dispatch method with closeLoadingActionCreator", async () => {
+      const { result } = renderHook(() => useClimbingWall(), {
+        wrapper: ProviderWrapper,
+      });
+
+      await result.current.loadClimbingWall("1234");
+
+      expect(dispatch).toHaveBeenCalledWith(closeLoadingActionCreator());
+    });
+  });
 });
