@@ -2,6 +2,9 @@ import ClimbingWallDetailStyled from "./ClimbingWallDetailStyled";
 import { Container, Typography } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import IconLocation from "../IconLocation/IconLocation";
 
 interface ClimbingWallProps {
   name: string;
@@ -19,6 +22,8 @@ interface ClimbingWallProps {
   website: string;
   email: string;
   telephone: number;
+  lat: number;
+  lng: number;
 }
 
 const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
@@ -35,6 +40,8 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
     website,
     email,
     telephone,
+    lat,
+    lng,
   } = climbingWall;
   return (
     <ClimbingWallDetailStyled>
@@ -375,6 +382,7 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
               pr: "1.5rem",
               pt: "0.5rem",
               pl: "1.5rem",
+              pb: "1.5rem",
             }}
           >
             {prices}
@@ -457,12 +465,25 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
               pr: "1.5rem",
               pt: "0.5rem",
               pl: "1.5rem",
+              pb: "1.5rem",
             }}
           >
             <a href={`tel: ${telephone}`}>{telephone}</a>
           </Typography>
         </article>
       </Container>
+      <MapContainer
+        className="leaflet"
+        center={{ lat: lat, lng: lng }}
+        zoom={20}
+        scrollWheelZoom={false}
+      >
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <Marker position={{ lat: lat, lng: lng }} icon={IconLocation}>
+          {" "}
+          <Popup>{name}</Popup>
+        </Marker>
+      </MapContainer>
     </ClimbingWallDetailStyled>
   );
 };

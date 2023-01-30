@@ -15,6 +15,8 @@ export interface ClimbingWall {
   picture2: string;
   picture3: string;
   picture4: string;
+  lat: number;
+  lng: number;
 }
 
 export interface UiStructure {

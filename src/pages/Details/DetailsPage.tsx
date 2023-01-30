@@ -3,7 +3,7 @@ import useClimbingWall from "../../hooks/climbingWall/useClimbingWall";
 import { useAppSelector } from "../../redux/hooks";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import ClimbingWallDetail from "../../ClimbingWallDetail/ClimbingWallDetail";
+import ClimbingWallDetail from "../../components/ClimbingWallDetail/ClimbingWallDetail";
 
 const DetailsPage = (): JSX.Element => {
   const { loadClimbingWall } = useClimbingWall();
@@ -33,6 +33,8 @@ const DetailsPage = (): JSX.Element => {
         schedule={climbingWall.schedule}
         telephone={climbingWall.telephone}
         website={climbingWall.website}
+        lat={climbingWall.lat}
+        lng={climbingWall.lng}
       />
     </>
   );
