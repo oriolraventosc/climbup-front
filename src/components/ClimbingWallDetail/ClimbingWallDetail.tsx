@@ -46,7 +46,12 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
   return (
     <ClimbingWallDetailStyled>
       <Container disableGutters maxWidth={false} className="climbingwall-image">
-        <img src={picture1} alt={name} width="100%" height="100%" />
+        <img
+          src={picture1}
+          alt={`Rocódromo ${name}`}
+          width="100%"
+          height="100%"
+        />
       </Container>
       <Container
         disableGutters
@@ -69,6 +74,8 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
             textAlign: "center",
             margin: "0",
           }}
+          aria-label={city}
+          aria-hidden="false"
         >
           {city.toUpperCase()}
         </Typography>
@@ -109,6 +116,8 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
             color: "primary.dark",
             margin: "0",
           }}
+          aria-hidden="false"
+          aria-label={description}
         >
           {description}
         </Typography>
@@ -155,6 +164,8 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
               pt: "0.5rem",
               pl: "1.5rem",
             }}
+            aria-hidden="false"
+            aria-label={address}
           >
             {address}
           </Typography>
@@ -193,6 +204,8 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
               pt: "0.5rem",
               pl: "1.5rem",
             }}
+            aria-hidden="false"
+            aria-label={schedule}
           >
             {schedule}
           </Typography>
@@ -283,6 +296,8 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
           {installations.map((installation, index) => (
             <Typography
               key={index}
+              aria-label={installation}
+              aria-hidden="false"
               sx={{
                 fontSize: {
                   xxl: "2rem",
@@ -327,6 +342,8 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
           {activities.map((activity, index) => (
             <Typography
               key={index}
+              aria-label={activity}
+              aria-hidden="false"
               sx={{
                 fontSize: {
                   xxl: "2rem",
@@ -369,6 +386,8 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
           </Typography>
           <Typography
             className="climbingwall-information__contact-prices"
+            aria-hidden="false"
+            aria-label={prices}
             sx={{
               fontSize: {
                 xxl: "2rem",
@@ -477,6 +496,7 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
         center={{ lat: lat, lng: lng }}
         zoom={20}
         scrollWheelZoom={false}
+        aria-label={`${name} location`}
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         <Marker position={{ lat: lat, lng: lng }} icon={IconLocation}>
