@@ -12,12 +12,14 @@ describe("Given a userActionsReducer", () => {
         email: "admin@gmail.com",
         password: "admin",
         accessToken: "",
+        id: "12345",
       });
       const expectedState = {
         isLogged: true,
         email: "",
         password: "",
         accessToken: "",
+        id: "12345",
       };
 
       const newState = userActionsReducer(UserInitialState, action);
@@ -32,6 +34,7 @@ describe("Given a userActionsReducer", () => {
         email: "",
         password: "",
         accessToken: "",
+        id: "",
       };
 
       const newState = userActionsReducer(UserInitialState, action);

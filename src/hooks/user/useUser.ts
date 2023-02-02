@@ -37,13 +37,14 @@ const useUser = () => {
       dispatch(openLoadingActionCreator());
       const response = await axios.post(url, userData);
 
-      const { accessToken } = await response.data;
+      const { accessToken, id } = await response.data;
 
       const loggedUser: JwtPayloadCustom = jwtDecode(accessToken);
       dispatch(
         userLoginActionCreator({
           ...loggedUser,
           accessToken: accessToken,
+          id: id,
         })
       );
 
