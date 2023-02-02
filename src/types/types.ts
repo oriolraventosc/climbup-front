@@ -27,6 +27,7 @@ export interface UserStructure {
   email?: string;
   password?: string;
   accessToken?: string;
+  id?: string;
 }
 
 export interface JwtPayloadCustom {

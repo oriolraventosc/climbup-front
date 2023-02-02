@@ -69,7 +69,8 @@
       "!src/__snapshots__/*.snap",
       "!src/styles/colors.ts",
       "!src/styles/globalStyles.ts",
-      "!src/styles/mainTheme.ts"
+      "!src/styles/mainTheme.ts",
+      "!src/reportWebVitals.ts"
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)"

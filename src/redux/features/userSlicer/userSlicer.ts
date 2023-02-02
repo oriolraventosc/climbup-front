@@ -10,6 +10,7 @@ export const UserInitialState: UserState = {
   password: "",
   isLogged: false,
   accessToken: "",
+  id: "",
 };
 
 const userSlice = createSlice({
@@ -19,6 +20,7 @@ const userSlice = createSlice({
     userLogin: (initialState, action: PayloadAction<UserStructure>) => ({
       ...initialState,
       isLogged: true,
+      id: action.payload.id,
     }),
     userLogout: (initialState) => ({
       ...initialState,
