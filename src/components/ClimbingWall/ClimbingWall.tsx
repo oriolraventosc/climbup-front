@@ -25,6 +25,7 @@ const ClimbingWall = (climbingWall: ClimbingWallProps): JSX.Element => {
         alignItems: "center",
         border: "1px solid rgb(0, 16, 17, 0.1)",
       }}
+      aria-label={climbingWall.name}
       onClick={() => navigate(`/${climbingWall.id}`)}
     >
       <Container
