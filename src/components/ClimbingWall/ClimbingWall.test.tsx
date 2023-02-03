@@ -6,6 +6,14 @@ import mainTheme from "../../styles/mainTheme";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "../../redux/store";
+import userEvent from "@testing-library/user-event";
+
+const mockedUsedNavigate = jest.fn();
+
+jest.mock("react-router-dom", () => ({
+  ...(jest.requireActual("react-router-dom") as any),
+  useNavigate: () => mockedUsedNavigate,
+}));
 
 describe("Given a ClimbingWall component", () => {
   describe("When it is rendered", () => {
@@ -112,6 +120,34 @@ describe("Given a ClimbingWall component", () => {
       const expectedParagraph = screen.getByText(paragraphText) as HTMLElement;
 
       expect(expectedParagraph).toBeInTheDocument();
+    });
+
+    test("Then when clicked on the climbing wall it should call an action", async () => {
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <ThemeProvider theme={mainTheme}>
+              <GlobalStyles />
+              <ClimbingWall
+                name="Drac de Pedra"
+                address="Rubí, Barcelona 08191"
+                description="Rocódromo situado en Rubí"
+                picture1="dracdepedra.jpg"
+                key="dracdepedra"
+                id="1234566788"
+              />
+            </ThemeProvider>
+          </Provider>
+        </BrowserRouter>
+      );
+      const containerAccessibleName = "Drac de Pedra";
+
+      const expectedContainer = screen.queryByRole("generic", {
+        name: containerAccessibleName,
+      }) as HTMLElement;
+      await userEvent.click(expectedContainer);
+
+      expect(mockedUsedNavigate).toHaveBeenCalled();
     });
   });
 });
