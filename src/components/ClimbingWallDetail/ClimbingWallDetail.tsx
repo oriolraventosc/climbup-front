@@ -497,6 +497,7 @@ const ClimbingWallDetail = (climbingWall: ClimbingWallProps): JSX.Element => {
         zoom={20}
         scrollWheelZoom={false}
         aria-label={`${name} location`}
+        style={{ borderRadius: "5px" }}
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         <Marker position={{ lat: lat, lng: lng }} icon={IconLocation}>
