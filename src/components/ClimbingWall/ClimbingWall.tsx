@@ -26,7 +26,7 @@ const ClimbingWall = (climbingWall: ClimbingWallProps): JSX.Element => {
         border: "1px solid rgb(0, 16, 17, 0.1)",
       }}
       aria-label={climbingWall.name}
-      onClick={() => navigate(`/${climbingWall.id}`)}
+      onClick={() => navigate(`/rocodromo/${climbingWall.id}`)}
     >
       <Container
         disableGutters
