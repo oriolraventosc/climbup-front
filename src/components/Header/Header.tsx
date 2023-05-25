@@ -164,25 +164,6 @@ const Header = (): JSX.Element => {
           >
             Buscar rocódromos
           </Typography>
-          {isLogged && (
-            <Typography
-              variant="body2"
-              sx={{
-                fontSize: {
-                  xxl: "2.5rem",
-                  xl: "2.5rem",
-                  lg: "1.3rem",
-                  md: "2.5rem",
-                  sm: "1.5rem",
-                  xs: "1.5rem",
-                },
-              }}
-              className="header-mobile__item-open"
-              onClick={() => navigate("/tus-rocodromos")}
-            >
-              Tus rocódromos
-            </Typography>
-          )}
           <Typography
             variant="body2"
             sx={{
@@ -288,26 +269,6 @@ const Header = (): JSX.Element => {
           >
             Buscar rocódromos
           </Typography>
-          {isLogged && (
-            <Typography
-              variant="body2"
-              sx={{
-                fontSize: {
-                  xxl: "2.5rem",
-                  xl: "1.6rem",
-                  lg: "1.3rem",
-                  md: "1.6rem",
-                  sm: "1.5rem",
-                  xs: "1.5rem",
-                },
-              }}
-              className="header-desktop__item"
-              aria-label="Buscar rocódromos"
-              onClick={() => navigate("/tus-rocodromos")}
-            >
-              Tus rocódromos
-            </Typography>
-          )}
           <Typography
             variant="body2"
             sx={{
