@@ -2,6 +2,7 @@ import Header from "../../components/Header/Header";
 import { Typography, Button } from "@mui/material";
 import NotFoundPageStyled from "./404pageStyled";
 import { useNavigate } from "react-router-dom";
+import Label from "./Label";
 
 const NotFoundPage = (): JSX.Element => {
   const navigate = useNavigate();
@@ -69,6 +70,7 @@ const NotFoundPage = (): JSX.Element => {
           VOLVER AL INICIO
         </Button>
       </NotFoundPageStyled>
+      <Label text="Solution" color="blue" />
     </>
   );
 };
